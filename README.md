@@ -23,3 +23,7 @@ $ npm run generate
 
 - NuxtJS
 - Axios
+
+## 💣 Despliegue
+
+El proyecto esta disponible en https://dreamy-babbage-2acb99.netlify.app/
