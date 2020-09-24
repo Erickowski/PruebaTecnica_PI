@@ -3,21 +3,62 @@
     <h2>Formulario</h2>
     <p>Por favor complete el siguiente formulario.</p>
     <form>
-      <input type="text" placeholder="Nombres*" />
-      <input type="text" placeholder="Dirección" />
-      <select>
+      <input v-model="name" type="text" placeholder="Nombres*" />
+      <input v-model="address" type="text" placeholder="Dirección" />
+      <select v-model="genre">
         <option value="" disabled selected>Genero</option>
         <option value="F">Femenino</option>
         <option value="M">Masculino</option>
       </select>
       <legend>* Campos requeridos</legend>
-      <button type="submit">Enviar</button>
+      <button v-on:click="putData" type="submit">Enviar</button>
     </form>
   </main>
 </template>
 
 <script>
-export default {}
+import axios from 'axios'
+import Swal from 'sweetalert2'
+
+export default {
+  data() {
+    return {
+      name: '',
+      address: '',
+      genre: '',
+    }
+  },
+  methods: {
+    putData(e) {
+      e.preventDefault()
+      if (this.name == '') {
+        Swal.fire('Llena los campos obligatorios')
+      } else {
+        axios
+          .put('https://jsonplaceholder.typicode.com/users/1', {
+            name: this.name,
+            address: this.address,
+            genre: this.genre,
+          })
+          .then((res) => {
+            if (res.status == 200) {
+              Swal.fire(
+                '¡Operación con exito!',
+                'Los datos han sido actualizados.',
+                'success'
+              )
+            } else {
+              Swal.fire(
+                '¡Hubo un error!',
+                'Ocurrio un problema inesperado.',
+                'error'
+              )
+            }
+          })
+      }
+    },
+  },
+}
 </script>
 
 <style>
