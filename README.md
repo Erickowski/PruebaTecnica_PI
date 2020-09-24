@@ -1,20 +1,25 @@
-# pruebatecnica
+# 💻 Ejercicio Prueba Tecnica
 
-## Build Setup
+Este proyecto es un ejercicio para una prueba técnica.
+
+## 🛠 Scripts
 
 ```bash
-# install dependencies
+# Instalar dependencias
 $ npm install
 
-# serve with hot reload at localhost:3000
+# Encender servidor de desarrollo en localhost:3000
 $ npm run dev
 
-# build for production and launch server
+# Crear version de producción y lanzar el servidor
 $ npm run build
 $ npm run start
 
-# generate static project
+# Generar un proyecto estatico
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## 💎 Tecnologías
+
+- NuxtJS
+- Axios
