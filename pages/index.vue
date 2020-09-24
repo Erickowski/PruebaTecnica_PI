@@ -1,30 +1,19 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        pruebatecnica
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </div>
+  <main>
+    <h2>Formulario</h2>
+    <p>Por favor complete el siguiente formulario.</p>
+    <form>
+      <input type="text" placeholder="Nombres*" />
+      <input type="text" placeholder="Dirección" />
+      <select>
+        <option value="" disabled selected>Genero</option>
+        <option value="F">Femenino</option>
+        <option value="M">Masculino</option>
+      </select>
+      <legend>* Campos requeridos</legend>
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
 </template>
 
 <script>
@@ -32,42 +21,44 @@ export default {}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+main {
+  margin: 10px 0 25px;
+  padding: 0 50px;
+}
+form {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  flex-direction: column;
 }
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+form input,
+form select {
+  height: 50px;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #eee;
+  outline: none;
+  border: none;
+  border-radius: 10px;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+form input::placeholder,
+form select {
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
 }
-
-.links {
-  padding-top: 15px;
+form button {
+  margin: 25px 0;
+  padding: 20px 0;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    145deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(9, 9, 121, 1) 100%
+  );
+  border: none;
+  border-radius: 10px;
 }
 </style>
