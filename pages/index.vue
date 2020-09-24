@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="form-container">
     <h2>Formulario</h2>
     <p>Por favor complete el siguiente formulario.</p>
     <form>
@@ -21,7 +21,7 @@ export default {}
 </script>
 
 <style>
-main {
+.form-container {
   margin: 10px 0 25px;
   padding: 0 50px;
 }

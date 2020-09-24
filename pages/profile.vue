@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="profile-container">
     <img src="../assets/Profile.jpeg" alt="" srcset="" />
     <h2>Erick Mata</h2>
     <div>
@@ -39,14 +39,16 @@
   </main>
 </template>
 
+<script></script>
+
 <style>
-main {
+.profile-container {
   display: flex;
   flex-direction: column;
   margin: 50px 0;
   align-items: center;
 }
-main img {
+.profile-container img {
   width: 150px;
   height: 150px;
   border-radius: 160px;
@@ -55,15 +57,15 @@ main img {
   margin-left: auto;
   margin-right: auto;
 }
-main h2 {
+.profile-container h2 {
   margin: 25px 0;
 }
-main div {
+.profile-container div {
   width: 30%;
   display: flex;
   justify-content: space-between;
 }
-main div svg {
+.profile-container div svg {
   width: 25px;
   height: 25px;
 }

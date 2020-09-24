@@ -25,12 +25,23 @@
           d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
         />
       </svg>
-      <h1>{{ title }}</h1>
+      <h1 v-show="showMenu">Menu</h1>
+      <h1 v-show="!showMenu">
+        {{ $route.path == '/' ? 'Captura de Datos' : 'Mi perfil' }}
+      </h1>
     </header>
     <nav v-show="showMenu">
       <ul>
-        <li><a href="">Captura de datos</a></li>
-        <li><a href="">Mi perfil</a></li>
+        <li>
+          <nuxt-link to="/">
+            <span v-on:click="toggleShowMenu"> Captura de Datos </span>
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link to="/profile"
+            ><span v-on:click="toggleShowMenu"> Mi Perfil </span></nuxt-link
+          >
+        </li>
       </ul>
     </nav>
     <Nuxt />
@@ -42,7 +53,6 @@
 export default {
   data() {
     return {
-      title: 'Home',
       showMenu: false,
     }
   },
